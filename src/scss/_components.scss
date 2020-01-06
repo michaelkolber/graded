@@ -1,0 +1,15 @@
+.button {
+    background-color: $primary;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: calc(.75em + 1px) .5em;
+    
+    &:hover {
+        background-color: darken($primary, 10%);
+    }
+    
+    &:active {
+        background-color: darken($primary, 20%);
+    }
+}

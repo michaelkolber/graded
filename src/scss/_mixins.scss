@@ -1,0 +1,9 @@
+@mixin themed($property, $light-value, $dark-value) {
+    @media (prefers-color-scheme: light) {
+        #{$property}: $light-value;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        #{$property}: $dark-value;
+    }
+}

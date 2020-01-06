@@ -1,0 +1,56 @@
+@import 'mixins';
+@import 'colors';
+
+@import 'normalize';
+@import 'components';
+
+body {
+    @include themed(background-color, white, black);
+    @include themed(color, #2b3060, white);
+    font-family: 'Open Sans', 'Trebuchet MS', 'Arial', sans-serif;
+}
+
+.content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    // height: 100vh;
+    justify-content: center;
+}
+
+.intro {
+    margin: 4em 0;
+    text-align: center;
+    
+    &__callout, &__tagline {
+        margin: .25em 0;
+    }
+}
+
+.search {
+    align-items: center;
+    display: flex;
+    width: 90%;
+    
+    &__bar {
+        @include themed(border, 1px solid lightgrey, 1px solid white);
+        @include themed(border-right, none, none);
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 0;
+        box-sizing: border-box;
+        flex-basis: 80%;
+        outline: 0;
+        padding: .75em .5em;
+    }
+    
+    &__button {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
+
+.or {
+    margin: 1em 0;
+}
