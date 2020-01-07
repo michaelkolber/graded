@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -342,7 +343,9 @@ template {
   border: none;
   border-radius: 4px;
   color: white;
-  padding: calc(.75em + 1px) 0.5em;
+  padding: calc(.75em + 1px);
+  text-align: center;
+  user-select: none;
 }
 .button:hover {
   background-color: #1285ff;
@@ -352,11 +355,11 @@ template {
 }
 
 body {
-  font-family: "Open Sans", "Trebuchet MS", "Arial", sans-serif;
+  font-family: "Segoe UI Emoji", "Open Sans", "Trebuchet MS", "Arial", sans-serif;
 }
 @media (prefers-color-scheme: light) {
   body {
-    background-color: white;
+    background-color: #f8f8f8;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -376,7 +379,6 @@ body {
 }
 
 .content {
-  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -393,9 +395,17 @@ body {
 .search {
   align-items: center;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 3em;
+}
+
+.search-bar {
+  align-items: center;
+  display: flex;
   width: 90%;
 }
-.search__bar {
+.search-bar__input {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 0;
   border-top-left-radius: 4px;
@@ -406,32 +416,148 @@ body {
   padding: 0.75em 0.5em;
 }
 @media (prefers-color-scheme: light) {
-  .search__bar {
+  .search-bar__input {
     border: 1px solid lightgrey;
   }
 }
 @media (prefers-color-scheme: dark) {
-  .search__bar {
+  .search-bar__input {
     border: 1px solid white;
   }
 }
 @media (prefers-color-scheme: light) {
-  .search__bar {
+  .search-bar__input {
     border-right: none;
   }
 }
 @media (prefers-color-scheme: dark) {
-  .search__bar {
+  .search-bar__input {
     border-right: none;
   }
 }
-.search__button {
+.search-bar__button {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
+  flex-basis: 20%;
 }
 
 .or {
   margin: 1em 0;
+}
+
+.results {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.result {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px 0 #a2aebe36;
+  margin-bottom: 3em;
+  overflow: hidden;
+  width: 95%;
+}
+.result__top {
+  align-items: center;
+  display: flex;
+  height: 4em;
+  justify-content: space-between;
+}
+.result__name {
+  font-size: 1.75em;
+  font-weight: bold;
+  margin: 0;
+  max-height: 75%;
+  overflow: hidden;
+  padding: 0.5em;
+}
+.result__grade {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+  justify-content: center;
+  width: 4em;
+}
+.result__grade--good {
+  background-color: #40c945;
+}
+.result__grade--ok {
+  background-color: #f8cf3c;
+}
+.result__grade--bad {
+  background-color: #f00000;
+}
+.result__grade-letter {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+}
+.result__bottom {
+  background-color: #f5f8ff;
+  padding: 1em;
+}
+.result__details {
+  font-size: 0.85em;
+  font-style: italic;
+  margin-bottom: 2em;
+  text-align: center;
+}
+.result__details address {
+  display: inline;
+}
+.result__not-shown {
+  color: #7D899B;
+  font-size: 0.85em;
+  font-style: italic;
+  text-align: right;
+}
+
+.inspection {
+  margin: 3em 0;
+}
+.inspection:first-child {
+  margin-top: 0;
+}
+.inspection__data {
+  color: #7D899B;
+  font-size: 0.85em;
+  margin: 1em 0;
+}
+.inspection__date {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.inspection__grade {
+  font-weight: bold;
+}
+
+.violation {
+  align-items: center;
+  display: flex;
+  margin-bottom: 0.8em;
+}
+.violation__emoji {
+  margin-right: 0.5em;
+}
+.violation--critical .violation__text::after {
+  content: " (⚠️ critical)";
+  font-size: 0.75em;
+}
+.violation__em {
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #384159;
+  color: white;
+  min-height: 9em;
+  padding: 1em;
+}
+.footer a {
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

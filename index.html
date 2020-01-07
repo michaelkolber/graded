@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="intro">
@@ -13,17 +14,145 @@
     
     <main class="content">
         <div class="search">
-            <input class="search__bar" placeholder="Search for any NYC restaurant">
-            <div class="button search__button">Search</div>
+            <div class="locate">
+                <div class="button">Show Nearby Restaurants</div>
+            </div>
+            
+            <div class="or">
+                &mdash; or &mdash;
+            </div>
+            
+            <div class="search-bar">
+                <input class="search-bar__input" type="search" placeholder="Search for any NYC restaurant">
+                <div class="button search-bar__button">Search</div>
+            </div>
         </div>
-        
-        <div class="or">
-            &mdash; or &mdash;
-        </div>
-        
-        <div class="locate">
-            <div class="button">Show Nearby Restaurants</div>
+            
+        <div class="results">
+            <div class="result">
+                <div class="result__top">
+                    <h3 class="result__name">MARU</h3>
+                    <div class="result__grade result__grade--ok">
+                        <span class="result__grade-letter">B</span>
+                    </div>
+                </div>
+                <div class="result__bottom">
+                    <div class="result__details">
+                        <address>11 W 32ND ST, Manhattan</address> &bull; Portugese
+                    </div>
+                    
+                    <div class="result__inspections">
+                        <div class="inspection">
+                            <div class="inspection__data">
+                                <span class="inspection__date">Inspected 10/11/2019</span> • Grade unchanged
+                            </div>
+                            <div class="inspection__violations">
+                                <div class="violation violation--critical">
+                                    <div class="violation__emoji">🦟</div>
+                                    <div class="violation__text">
+                                        <span class="violation__em">Flies present</span>
+                                    </div>
+                                </div>
+                                <div class="violation">
+                                    <div class="violation__emoji">🐀</div>
+                                    <div class="violation__text">
+                                        Facility <span class="violation__em">not vermin proof</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inspection">
+                            <div class="inspection__data">
+                                <span class="inspection__date">Inspected 6/25/2019</span> • Received grade of <span class="inspection__grade">B</span>
+                            </div>
+                            <div class="inspection__violations">
+                                <div class="violation violation--critical">
+                                    <div class="violation__emoji">🍽</div>
+                                    <div class="violation__text">
+                                        <span class="violation__em">Food contact surface</span> not properly sanitized
+                                    </div>
+                                </div>
+                                <div class="violation">
+                                    <div class="violation__emoji">🍣</div>
+                                    <div class="violation__text">
+                                        <span class="violation__em">Cold food item</span> held above 41&deg; F
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result__not-shown">(7 older inspections not shown)</div>
+                </div>
+            </div>
+            
+            <div class="result">
+                <div class="result__top">
+                    <h3 class="result__name">MARU</h3>
+                    <div class="result__grade result__grade--ok">
+                        <span class="result__grade-letter">B</span>
+                    </div>
+                </div>
+                <div class="result__bottom">
+                    <div class="result__details">
+                        <address>11 W 32ND ST, Manhattan</address> &bull; Portugese
+                    </div>
+                    
+                    <div class="result__inspections">
+                        <div class="inspection">
+                            <div class="inspection__data">
+                                <span class="inspection__date">Inspected 10/11/2019</span> • Grade unchanged
+                            </div>
+                            <div class="inspection__violations">
+                                <div class="violation violation--critical">
+                                    <div class="violation__emoji">🦟</div>
+                                    <div class="violation__text">
+                                        <span class="violation__em">Flies present</span>
+                                    </div>
+                                </div>
+                                <div class="violation">
+                                    <div class="violation__emoji">🐀</div>
+                                    <div class="violation__text">
+                                        Facility <span class="violation__em">not vermin proof</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inspection">
+                            <div class="inspection__data">
+                                <span class="inspection__date">Inspected 6/25/2019</span> • Received grade of <span class="inspection__grade">B</span>
+                            </div>
+                            <div class="inspection__violations">
+                                <div class="violation violation--critical">
+                                    <div class="violation__emoji">🍽</div>
+                                    <div class="violation__text">
+                                        <span class="violation__em">Food contact surface</span> not properly sanitized
+                                    </div>
+                                </div>
+                                <div class="violation">
+                                    <div class="violation__emoji">🍣</div>
+                                    <div class="violation__text">
+                                        <span class="violation__em">Cold food item</span> held above 41&deg; F
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result__not-shown">(7 older inspections not shown)</div>
+                </div>
+            </div>
         </div>
     </main>
+    <footer class="footer">
+        Violation disclaimer: Violation names have been edited for conciseness. The actual 
+        violation names may be different from what is shown. To view the original violation 
+        names, <a href="#" target="_blank">see the mapping</a>.
+        <br>
+        <br>
+        All data is from <a href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j">NYC Open Data</a>.
+        <br>
+        Inspired by <a href="https://github.com/justiniso/EatSafeNYC">justiniso/EatSafeNYC</a>.
+    </footer>
 </body>
 </html>

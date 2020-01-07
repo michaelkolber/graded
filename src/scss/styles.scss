@@ -1,20 +1,18 @@
 @import 'mixins';
-@import 'colors';
+@import 'variables';
 
 @import 'normalize';
 @import 'components';
 
 body {
-    @include themed(background-color, white, black);
+    @include themed(background-color, #f8f8f8, black);
     @include themed(color, #2b3060, white);
-    font-family: 'Open Sans', 'Trebuchet MS', 'Arial', sans-serif;
+    font-family: 'Segoe UI Emoji', 'Open Sans', 'Trebuchet MS', 'Arial', sans-serif;
 }
 
 .content {
-    align-items: center;
     display: flex;
     flex-direction: column;
-    // height: 100vh;
     justify-content: center;
 }
 
@@ -30,9 +28,17 @@ body {
 .search {
     align-items: center;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+.search-bar {
+    align-items: center;
+    display: flex;
     width: 90%;
     
-    &__bar {
+    &__input {
         @include themed(border, 1px solid lightgrey, 1px solid white);
         @include themed(border-right, none, none);
         border-bottom-left-radius: 4px;
@@ -48,9 +54,143 @@ body {
     &__button {
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
+        flex-basis: 20%;
     }
 }
 
 .or {
     margin: 1em 0;
+}
+
+.results {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.result {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 3px 0 #a2aebe36;
+    margin-bottom: 3em;
+    overflow: hidden;
+    width: 95%;
+    
+    // Top part of result
+    &__top {  // Holds the restaurant name and grade
+        align-items: center;
+        display: flex;
+        height: $result-top-height;
+        justify-content: space-between;
+    }
+    
+    &__name {
+        font-size: 1.75em;
+        font-weight: bold;
+        margin: 0;
+        max-height: 75%;
+        overflow: hidden;
+        padding: .5em;
+    }
+    
+    &__grade {
+        align-items: center;
+        display: flex;
+        flex-shrink: 0;
+        height: 100%;
+        justify-content: center;
+        width: $result-top-height;
+        
+        &--good {background-color: #40c945;}
+        &--ok   {background-color: #f8cf3c;}
+        &--bad  {background-color: #f00000;}
+    }
+    
+    &__grade-letter {
+        color: white;
+        font-size: 3em;
+        font-weight: bold;
+    }
+    
+    
+    // Bottom part of result
+    &__bottom {
+        background-color: #f5f8ff;
+        padding: 1em;
+    }
+    
+    &__details {
+        font-size: .85em;
+        font-style: italic;
+        margin-bottom: 2em;
+        text-align: center;
+        
+        address {
+            display: inline;
+        }
+    }
+    
+    &__not-shown {
+        color: $color-text-soft;
+        font-size: $size-text-small;
+        font-style: italic;
+        text-align: right;
+    }
+}
+
+.inspection {
+    margin: 3em 0;
+    
+    &:first-child {
+        margin-top: 0;
+    }
+    
+    &__data {
+        color: $color-text-soft;
+        font-size: $size-text-small;
+        margin: 1em 0;
+    }
+    
+    &__date {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    &__grade {
+        font-weight: bold;
+    }
+}
+
+.violation {
+    align-items: center;
+    display: flex;
+    margin-bottom: .8em;
+    
+    &__emoji {
+        margin-right: .5em;
+    }
+    
+    &__text {
+        .violation--critical &::after {
+            content: ' (\026A0\0FE0F\a0 critical)';
+            font-size: .75em;
+        }
+    }
+    
+    &__em {
+        font-weight: bold;
+    }
+}
+
+
+// Footer
+.footer {
+    background-color: $color-text;
+    color: white;
+    min-height: 9em;
+    padding: 1em;
+    
+    a {
+        color: white;
+    }
 }
