@@ -378,6 +378,11 @@ body {
   }
 }
 
+.wrapper {
+  margin: auto;
+  max-width: 450px;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -558,6 +563,10 @@ body {
 }
 .footer a {
   color: white;
+}
+.footer__wrapper {
+  margin: auto;
+  max-width: 900px;
 }
 
 /*# sourceMappingURL=styles.css.map */

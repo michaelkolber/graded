@@ -10,6 +10,11 @@ body {
     font-family: 'Segoe UI Emoji', 'Open Sans', 'Trebuchet MS', 'Arial', sans-serif;
 }
 
+.wrapper {
+    margin: auto;
+    max-width: 450px;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -192,5 +197,10 @@ body {
     
     a {
         color: white;
+    }
+    
+    &__wrapper {
+        margin: auto;
+        max-width: 900px;
     }
 }
