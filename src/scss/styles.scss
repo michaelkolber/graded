@@ -11,6 +11,7 @@ body {
 }
 
 .main-wrapper {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -18,7 +19,9 @@ body {
 }
 
 .content-wrapper {
+    margin: auto;
     max-width: 450px;
+    width: 100%;
 }
 
 .content {
@@ -215,9 +218,11 @@ body {
 // Footer
 .footer {
     background-color: $color-text;
+    box-sizing: border-box;
     color: white;
     min-height: 9em;
     padding: 1em;
+    width: 100%;
     
     a {
         color: white;
