@@ -1,13 +1,14 @@
 {
-  "name": "gradient",
+  "name": "graded",
   "version": "1.0.0",
   "description": "Location-based NYC restaurant grades",
-  "main": "index.js",
+  "main": "index.html",
   "dependencies": {
-    "autoprefixer": "^9.7.3",
-    "postcss-cli": "^6.1.3"
   },
   "devDependencies": {
+    "@types/jquery": "^3.3.31",
+    "autoprefixer": "^9.7.3",
+    "postcss-cli": "^6.1.3",
     "browser-sync": "^2.26.7"
   },
   "scripts": {
@@ -17,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/michaelkolber/gradient.git"
+    "url": "git+https://github.com/michaelkolber/graded.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "",
   "bugs": {
-    "url": "https://github.com/michaelkolber/gradient/issues"
+    "url": "https://github.com/michaelkolber/graded/issues"
   },
-  "homepage": "https://github.com/michaelkolber/gradient#readme"
+  "homepage": "https://github.com/michaelkolber/graded#readme"
 }

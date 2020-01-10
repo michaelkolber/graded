@@ -1,166 +1,228 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <title>Graded NYC</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
 </head>
+
 <body>
-    <div class="wrapper">
-        <div class="intro">
-            <h1 class="intro__callout">You are what you eat.</h1>
-            <p class="intro__tagline">Know what's going into your food.</p>
+    <div class="main-wrapper">
+        <div class="content-wrapper">
+            <div class="intro">
+                <h1 class="intro__callout">You are what you eat.</h1>
+                <p class="intro__tagline">Know what's going into your food.</p>
+            </div>
+            
+            <main class="content">
+                <div class="search">
+                    <div class="locate">
+                        <div class="button button--inline" id="js-search-button">Show Nearby Restaurants</div> within 
+                        <select class="select" id="js-distance-select">
+                            <option value="0.1">0.1 mi</option>
+                            <option value="0.2">0.2 mi</option>
+                            <option value="0.5">0.5 mi</option>
+                            <option value="1">1 mi</option>
+                            <option value="2">2 mi</option>
+                        </select>
+                    </div>
+                    <div class="location-error" id="js-location-error"></div>
+                    
+                    <!-- <div class="or">
+                        &mdash; or &mdash;
+                    </div>
+                    
+                    <div class="search-bar">
+                        <input class="search-bar__input" type="search" placeholder="Search for any NYC restaurant">
+                        <div class="button search-bar__button">Search</div>
+                    </div> -->
+                </div>
+                    
+                <div class="results" id="js-results">
+                    <div class="empty-state" id="js-empty-state">
+                        <h1 class="empty-state__title">No results :(</h1>
+                        <p class="empty-state__tip"></p>
+                        <img width="100%" src="assets/images/undraw_Hamburger_8ge6.svg" alt="Hamburger picture">
+                    </div>
+                    
+                    <div class="result" style="display: none;">
+                        <div class="result__top">
+                            <h3 class="result__name">MARU</h3>
+                            <div class="result__grade result__grade--ok">
+                                <span class="result__grade-letter">B</span>
+                            </div>
+                        </div>
+                        <div class="result__bottom">
+                            <div class="result__details">
+                                <address>11 W 32ND ST, Manhattan</address> &bull; Portugese
+                            </div>
+                            
+                            <div class="result__inspections">
+                                <div class="inspection">
+                                    <div class="inspection__data">
+                                        <span class="inspection__date">Inspected 10/11/2019</span> • Grade unchanged
+                                    </div>
+                                    <div class="inspection__violations">
+                                        <div class="violation violation--critical">
+                                            <div class="violation__emoji">🦟</div>
+                                            <div class="violation__text">
+                                                <b>Flies present</b>
+                                            </div>
+                                        </div>
+                                        <div class="violation">
+                                            <div class="violation__emoji">🐀</div>
+                                            <div class="violation__text">
+                                                Facility <b>not vermin proof</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inspection">
+                                    <div class="inspection__data">
+                                        <span class="inspection__date">Inspected 6/25/2019</span> • Received grade of <span class="inspection__grade">B</span>
+                                    </div>
+                                    <div class="inspection__violations">
+                                        <div class="violation violation--critical">
+                                            <div class="violation__emoji">🍽</div>
+                                            <div class="violation__text">
+                                                <b>Food contact surface</b> not properly sanitized
+                                            </div>
+                                        </div>
+                                        <div class="violation">
+                                            <div class="violation__emoji">🍣</div>
+                                            <div class="violation__text">
+                                                <b>Cold food item</b> held above 41&deg; F
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__not-shown">(7 older inspections not shown)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="result" style="display: none;">
+                        <div class="result__top">
+                            <h3 class="result__name">MARU</h3>
+                            <div class="result__grade result__grade--ok">
+                                <span class="result__grade-letter">B</span>
+                            </div>
+                        </div>
+                        <div class="result__bottom">
+                            <div class="result__details">
+                                <address>11 W 32ND ST, Manhattan</address> &bull; Portugese
+                            </div>
+                            
+                            <div class="result__inspections">
+                                <div class="inspection">
+                                    <div class="inspection__data">
+                                        <span class="inspection__date">Inspected 10/11/2019</span> • Grade unchanged
+                                    </div>
+                                    <div class="inspection__violations">
+                                        <div class="violation violation--critical">
+                                            <div class="violation__emoji">🦟</div>
+                                            <div class="violation__text">
+                                                <b>Flies present</b>
+                                            </div>
+                                        </div>
+                                        <div class="violation">
+                                            <div class="violation__emoji">🐀</div>
+                                            <div class="violation__text">
+                                                Facility <b>not vermin proof</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inspection">
+                                    <div class="inspection__data">
+                                        <span class="inspection__date">Inspected 6/25/2019</span> • Received grade of <span class="inspection__grade">B</span>
+                                    </div>
+                                    <div class="inspection__violations">
+                                        <div class="violation violation--critical">
+                                            <div class="violation__emoji">🍽</div>
+                                            <div class="violation__text">
+                                                <b>Food contact surface</b> not properly sanitized
+                                            </div>
+                                        </div>
+                                        <div class="violation">
+                                            <div class="violation__emoji">🍣</div>
+                                            <div class="violation__text">
+                                                <b>Cold food item</b> held above 41&deg; F
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__not-shown">(7 older inspections not shown)</div>
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
         
-        <main class="content">
-            <div class="search">
-                <div class="locate">
-                    <div class="button">Show Nearby Restaurants</div>
-                </div>
-                
-                <div class="or">
-                    &mdash; or &mdash;
-                </div>
-                
-                <div class="search-bar">
-                    <input class="search-bar__input" type="search" placeholder="Search for any NYC restaurant">
-                    <div class="button search-bar__button">Search</div>
-                </div>
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <b>Violation Disclaimer:</b>
+                <br>
+                Violation names have been edited for conciseness. The actual 
+                violation names may be different from what is shown. To view the original violation 
+                names, <a href="https://github.com/michaelkolber/graded/blob/master/src/ts/violations.ts" target="_blank">see the mapping</a>.
+                <br>
+                <br>
+                All data is from <a href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j">NYC Open Data</a>.
+                <br>
+                Inspired by <a href="https://github.com/justiniso/EatSafeNYC">justiniso/EatSafeNYC</a>.
+                <br>
+                <br>
+                Made with &lt;3 by <a href="https://github.com/michaelkolber">Michael Kolber</a>
             </div>
-                
-            <div class="results">
-                <div class="result">
-                    <div class="result__top">
-                        <h3 class="result__name">MARU</h3>
-                        <div class="result__grade result__grade--ok">
-                            <span class="result__grade-letter">B</span>
-                        </div>
-                    </div>
-                    <div class="result__bottom">
-                        <div class="result__details">
-                            <address>11 W 32ND ST, Manhattan</address> &bull; Portugese
-                        </div>
-                        
-                        <div class="result__inspections">
-                            <div class="inspection">
-                                <div class="inspection__data">
-                                    <span class="inspection__date">Inspected 10/11/2019</span> • Grade unchanged
-                                </div>
-                                <div class="inspection__violations">
-                                    <div class="violation violation--critical">
-                                        <div class="violation__emoji">🦟</div>
-                                        <div class="violation__text">
-                                            <span class="violation__em">Flies present</span>
-                                        </div>
-                                    </div>
-                                    <div class="violation">
-                                        <div class="violation__emoji">🐀</div>
-                                        <div class="violation__text">
-                                            Facility <span class="violation__em">not vermin proof</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="inspection">
-                                <div class="inspection__data">
-                                    <span class="inspection__date">Inspected 6/25/2019</span> • Received grade of <span class="inspection__grade">B</span>
-                                </div>
-                                <div class="inspection__violations">
-                                    <div class="violation violation--critical">
-                                        <div class="violation__emoji">🍽</div>
-                                        <div class="violation__text">
-                                            <span class="violation__em">Food contact surface</span> not properly sanitized
-                                        </div>
-                                    </div>
-                                    <div class="violation">
-                                        <div class="violation__emoji">🍣</div>
-                                        <div class="violation__text">
-                                            <span class="violation__em">Cold food item</span> held above 41&deg; F
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="result__not-shown">(7 older inspections not shown)</div>
-                    </div>
-                </div>
-                
-                <div class="result">
-                    <div class="result__top">
-                        <h3 class="result__name">MARU</h3>
-                        <div class="result__grade result__grade--ok">
-                            <span class="result__grade-letter">B</span>
-                        </div>
-                    </div>
-                    <div class="result__bottom">
-                        <div class="result__details">
-                            <address>11 W 32ND ST, Manhattan</address> &bull; Portugese
-                        </div>
-                        
-                        <div class="result__inspections">
-                            <div class="inspection">
-                                <div class="inspection__data">
-                                    <span class="inspection__date">Inspected 10/11/2019</span> • Grade unchanged
-                                </div>
-                                <div class="inspection__violations">
-                                    <div class="violation violation--critical">
-                                        <div class="violation__emoji">🦟</div>
-                                        <div class="violation__text">
-                                            <span class="violation__em">Flies present</span>
-                                        </div>
-                                    </div>
-                                    <div class="violation">
-                                        <div class="violation__emoji">🐀</div>
-                                        <div class="violation__text">
-                                            Facility <span class="violation__em">not vermin proof</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="inspection">
-                                <div class="inspection__data">
-                                    <span class="inspection__date">Inspected 6/25/2019</span> • Received grade of <span class="inspection__grade">B</span>
-                                </div>
-                                <div class="inspection__violations">
-                                    <div class="violation violation--critical">
-                                        <div class="violation__emoji">🍽</div>
-                                        <div class="violation__text">
-                                            <span class="violation__em">Food contact surface</span> not properly sanitized
-                                        </div>
-                                    </div>
-                                    <div class="violation">
-                                        <div class="violation__emoji">🍣</div>
-                                        <div class="violation__text">
-                                            <span class="violation__em">Cold food item</span> held above 41&deg; F
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="result__not-shown">(7 older inspections not shown)</div>
-                    </div>
-                </div>
-            </div>
-        </main>
+        </footer>
     </div>
     
-    <footer class="footer">
-        <div class="footer__wrapper">
-            Violation disclaimer: Violation names have been edited for conciseness. The actual 
-            violation names may be different from what is shown. To view the original violation 
-            names, <a href="#" target="_blank">see the mapping</a>.
-            <br>
-            <br>
-            All data is from <a href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j">NYC Open Data</a>.
-            <br>
-            Inspired by <a href="https://github.com/justiniso/EatSafeNYC">justiniso/EatSafeNYC</a>.
-            <br>
-            <br>
-            Made with &lt;3 by <a href="https://github.com/michaelkolber">Michael Kolber</a>
+    <!-- Templates for HTML injection -->
+    <div style="display: none;">
+        <!-- Result template -->
+        <div class="result" id="js-result-template">
+            <div class="result__top">
+                <h3 class="result__name"></h3>
+                <div class="result__grade">
+                    <span class="result__grade-letter"></span>
+                </div>
+            </div>
+            <div class="result__bottom">
+                <div class="result__details">
+                    <address></address><span></span>
+                </div>
+                
+                <div class="result__inspections">
+                </div>
+                
+                <div class="result__not-shown"></div>
+            </div>
         </div>
-    </footer>
+        
+        <!-- Inspection template -->
+        <div class="inspection" id="js-inspection-template">
+            <div class="inspection__data">
+                <span class="inspection__date"></span> • <span class="inspection__grade-explanation"></span><span class="inspection__grade"></span>
+            </div>
+            <div class="inspection__violations">
+            </div>
+        </div>
+        
+        <!-- Violation template -->
+        <div class="violation" id="js-violation-template">
+            <div class="violation__emoji"></div>
+            <div class="violation__text"></div>
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>

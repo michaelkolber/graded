@@ -3,6 +3,7 @@
     border: none;
     border-radius: 4px;
     color: white;
+    cursor: pointer;
     padding: calc(.75em + 1px);
     text-align: center;
     user-select: none;
@@ -14,4 +15,18 @@
     &:active {
         background-color: darken($color-primary, 20%);
     }
+    
+    &.is-disabled {
+        background-color: lightgrey !important;
+        cursor: default;
+    }
+    
+    &--inline {
+        display: inline-block;
+    }
+}
+
+.select {
+    border-radius: 4px;
+    padding: calc(.25em + 1px);
 }

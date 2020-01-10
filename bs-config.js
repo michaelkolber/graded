@@ -50,7 +50,7 @@ module.exports = {
     "logFileChanges": true,
     "logSnippet": true,
     "rewriteRules": [],
-    "open": "local",
+    "open": false,
     "browser": "default",
     "cors": false,
     "xip": false,
@@ -107,5 +107,6 @@ module.exports = {
         "gif": "img",
         "js": "script"
     },
-    "injectNotification": false
+    "injectNotification": false,
+    "https": true
 };

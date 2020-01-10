@@ -7,11 +7,17 @@
 body {
     @include themed(background-color, #f8f8f8, black);
     @include themed(color, #2b3060, white);
-    font-family: 'Segoe UI Emoji', 'Open Sans', 'Trebuchet MS', 'Arial', sans-serif;
+    font-family: 'Open Sans', 'Trebuchet MS', 'Arial', 'Segoe UI Emoji', sans-serif;
 }
 
-.wrapper {
-    margin: auto;
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.content-wrapper {
     max-width: 450px;
 }
 
@@ -27,6 +33,16 @@ body {
     
     &__callout, &__tagline {
         margin: .25em 0;
+    }
+}
+
+.location-error {
+    color: red;
+    display: none;
+    font-size: $size-text-small;
+    
+    &.is-visible {
+        display: block;
     }
 }
 
@@ -73,6 +89,15 @@ body {
     flex-direction: column;
 }
 
+.empty-state {
+    display: none;
+    text-align: center;
+    
+    &.is-visible {
+        display: block;
+    }
+}
+
 .result {
     background-color: white;
     border-radius: 4px;
@@ -96,10 +121,13 @@ body {
         max-height: 75%;
         overflow: hidden;
         padding: .5em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     
     &__grade {
         align-items: center;
+        background-color: lightgrey;
         display: flex;
         flex-shrink: 0;
         height: 100%;
@@ -180,10 +208,6 @@ body {
             content: ' (\026A0\0FE0F\a0 critical)';
             font-size: .75em;
         }
-    }
-    
-    &__em {
-        font-weight: bold;
     }
 }
 
