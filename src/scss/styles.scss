@@ -119,14 +119,13 @@ body {
     }
     
     &__name {
-        font-size: 1.75em;
+        font-size: 1.25em;
         font-weight: bold;
         margin: 0;
         max-height: 75%;
         overflow: hidden;
         padding: .5em;
         text-overflow: ellipsis;
-        white-space: nowrap;
     }
     
     &__grade {
