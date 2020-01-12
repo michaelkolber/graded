@@ -384,7 +384,7 @@ body {
 }
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: black;
+    background-color: #0e1016;
   }
 }
 @media (prefers-color-scheme: light) {
@@ -446,6 +446,7 @@ body {
   color: red;
   display: none;
   font-size: 0.85em;
+  margin: 1em 0;
 }
 .location-error.is-visible {
   display: block;
@@ -542,13 +543,32 @@ body {
 }
 
 .result {
-  background-color: white;
   border-radius: 4px;
-  -webkit-box-shadow: 0 2px 3px 0 #a2aebe36;
-          box-shadow: 0 2px 3px 0 #a2aebe36;
   margin-bottom: 3em;
   overflow: hidden;
   width: 95%;
+}
+@media (prefers-color-scheme: light) {
+  .result {
+    background-color: white;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .result {
+    background-color: #384159;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .result {
+    -webkit-box-shadow: 0 2px 3px 0 #a2aebe36;
+            box-shadow: 0 2px 3px 0 #a2aebe36;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .result {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
 }
 .result__top {
   -webkit-box-align: center;
@@ -604,8 +624,17 @@ body {
   font-weight: bold;
 }
 .result__bottom {
-  background-color: #f5f8ff;
   padding: 1em;
+}
+@media (prefers-color-scheme: light) {
+  .result__bottom {
+    background-color: #f5f8ff;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .result__bottom {
+    background-color: #222834;
+  }
 }
 .result__details {
   font-size: 0.85em;

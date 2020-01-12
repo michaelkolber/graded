@@ -5,7 +5,7 @@
 @import 'components';
 
 body {
-    @include themed(background-color, #f8f8f8, black);
+    @include themed(background-color, #f8f8f8, #0e1016);
     @include themed(color, #2b3060, white);
     font-family: 'Open Sans', 'Trebuchet MS', 'Arial', 'Segoe UI Emoji', sans-serif;
 }
@@ -43,6 +43,7 @@ body {
     color: red;
     display: none;
     font-size: $size-text-small;
+    margin: 1em 0;
     
     &.is-visible {
         display: block;
@@ -102,9 +103,9 @@ body {
 }
 
 .result {
-    background-color: white;
+    @include themed(background-color, white, $color-text);
     border-radius: 4px;
-    box-shadow: 0 2px 3px 0 #a2aebe36;
+    @include themed(box-shadow, 0 2px 3px 0 #a2aebe36, none);
     margin-bottom: 3em;
     overflow: hidden;
     width: 95%;
@@ -151,7 +152,7 @@ body {
     
     // Bottom part of result
     &__bottom {
-        background-color: #f5f8ff;
+        @include themed(background-color, #f5f8ff, #222834);
         padding: 1em;
     }
     
